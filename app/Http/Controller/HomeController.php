@@ -28,8 +28,8 @@ class HomeController
         /** @var Renderer $renderer */
         $renderer = Swoft::getBean('view');
         $content  = $renderer->render('home/index');
-return Context::mustGet()->getResponse()->withContentType(ContentType::HTML)->withContent("hello nihao a ");
-     //   return Context::mustGet()->getResponse()->withContentType(ContentType::HTML)->withContent($content);
+//return Context::mustGet()->getResponse()->withContentType(ContentType::HTML)->withContent("hello nihao a ");
+        return Context::mustGet()->getResponse()->withContentType(ContentType::HTML)->withContent($content);
     }
 
     /**
