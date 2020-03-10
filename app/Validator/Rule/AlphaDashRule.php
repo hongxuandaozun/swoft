@@ -23,8 +23,8 @@ class AlphaDashRule implements RuleInterface
      * @return array
      * @throws ValidatorException
      */
-    public function validate(array $data, string $propertyName, $item, $default = null): array
-    {
+    public function validate(array $data, string $propertyName, $item, $default = null, $strict = false): array
+{
         $message = $item->getMessage();
         if (!isset($data[$propertyName]) && $default === null) {
             $message = (empty($message)) ? sprintf('%s must exist!', $propertyName) : $message;
@@ -39,4 +39,5 @@ class AlphaDashRule implements RuleInterface
         $message = (empty($message)) ? sprintf('%s must be a email', $propertyName) : $message;
         throw new ValidatorException($message);
     }
+
 }
