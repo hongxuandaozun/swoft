@@ -3,14 +3,11 @@
 namespace App\Http\Controller;
 
 use ReflectionException;
-use Swoft;
 use Swoft\Bean\Exception\ContainerException;
 use Swoft\Context\Context;
-use Swoft\Http\Message\ContentType;
 use Swoft\Http\Message\Response;
 use Swoft\Http\Server\Annotation\Mapping\Controller;
 use Swoft\Http\Server\Annotation\Mapping\RequestMapping;
-use Swoft\View\Renderer;
 use Throwable;
 
 /**
@@ -20,7 +17,7 @@ use Throwable;
 class IndexController
 {
     /**
-     * @RequestMapping("/index")
+     * @RequestMapping("index")
      * @throws Throwable
      */
     public function index(): Response
@@ -29,7 +26,7 @@ class IndexController
     }
 
     /**
-     * @RequestMapping("/hello[/{name}]")
+     * @RequestMapping("hello[/{name}]")
      * @param string $name
      *
      * @return Response
