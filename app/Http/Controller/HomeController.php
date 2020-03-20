@@ -41,6 +41,15 @@ class HomeController
      */
     public function hello(string $name): Response
     {
-        return Context::mustGet()->getResponse()->withContent('Hello' . ($name === '' ? '' : ", {$name}"));
+        return Context::mustGet()->getResponse()->withContent('Hellod' . ($name === '' ? '' : ", {$name}"));
+    }
+    /**
+     * @RequestMapping(route="login")
+     * @return array
+     * @throws ReflectionException
+     * @throws ContainerException
+     */
+    public function login(){
+        return ['ok'];
     }
 }
